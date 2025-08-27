@@ -329,6 +329,80 @@ max-width: 650px;
   margin-top: 2rem;
   font-size: smaller;
 }
+.Reviews{
+  margin-top: 7rem;
+}
+.Reviews_container{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2rem;
+  margin: 5rem 2rem;
+
+}
+.Reviews-card{
+  max-width: 350px;
+  padding: 1rem 1rem 3rem;
+  box-shadow: 0 4px 12px var(--primary);
+  background-color: var(--light);
+  color: var(--text);
+}
+.profile i{
+  top: 15px;
+  right: 20px;
+  font-size: 5rem;
+  color: rgba(0,0,0,0.1);
+}
+.Reviews-card:hover{
+  background-color: var(--primary);
+  color: var(--light);
+}
+.Reviews-card:hover i{
+  color: var(--light);
+}
+.profile{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.profile img{
+  max-width: 80px;
+  max-height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.Reviews_container h3{
+  margin: 0;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+.Reviews-card p{
+  font-size: x-small;
+  text-align: left;
+  font-weight: bold;
+}
+
+.banner{
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+
+.banner img{
+  width: 100%;
+  height: auto;
+  
+}
+
+.banner .btn{
+  position: absolute;
+  bottom: 4rem;
+  left: 5rem;
+
+}
+
 
 
 .blog h2{
