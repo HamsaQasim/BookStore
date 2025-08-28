@@ -18,12 +18,16 @@ body{
     background-color: var(--light);
   
 }
+.mobile{
+  display: none;
+}
 .header{
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     padding: 1rem 2rem;
     box-shadow: 0 2px 8px var(--primary);
@@ -38,6 +42,7 @@ body{
 }
 
 .navbar {
+
     ul {
   list-style: none;
   display: flex; /* أفقي */
@@ -76,8 +81,8 @@ color: var(--primary);
 }
 
 
-/* Hero Section */
-.welcom {
+/* home section */
+.welcome {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -87,24 +92,25 @@ color: var(--primary);
   background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url(images/book1.png); /* خلفية شفافة */
   background-size: cover;
   background-position: center;
-  
+  background-size: cover; /**/
+
 }
 
-
-.welcom__content {
+.welcome_content {
     flex: 1;
-    max-width: 50%;
+    max-width: 100%;
+  
     h1 {
   font-size: 2.5rem;
   span {color: var(--primary);}
       }
 
  p {
-  max-width: 500px;
+  /*max-width: 500px;*/
   margin-bottom: 4rem;
    }
 }
-.welcom__books img {
+.welcome_books img {
   width: 100%;
   max-width: 650px; 
 }
@@ -117,22 +123,75 @@ color: var(--primary);
   padding: 0.5rem 1rem;
   text-decoration: none;
   transition: 0.3s;
-}
-
-.btn:hover {
+  &:hover {
   background-color: white;
   color: var(--primary);
 }
+}
 
+/*services section*/
+.services{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*flex-wrap: wrap;/**/
+  margin: 3rem 2rem;
+  gap: 1rem;
+}
 
+.services_cards{
+box-shadow: 0 2px 10px var(--primary);
+text-align: center;
+padding: 1rem 1rem;
+
+i{
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  color: var(--primary);
+}
+h3{
+  margin-bottom: 0.5rem;
+}
+}
+
+.services_cards:hover{
+background-color: var(--primary);
+color: var(--light);
+
+i{
+color: var(--light);
+}
+}
+
+/*about section*/
+.about{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  /*flex-wrap: wrap;/**/
+
+}
+.about_img img{
+width: 100%;
+max-width: 650px;
+}
+.about_content p{
+  max-width: 500px;
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+  font-size: smaller;
+}
+
+/*featured section*/
 .featured{
   text-align: center;
-}
-.featured h2 {
+
+  h2 {
   font-size: 30px;
   margin-bottom: 30px;
 }
-
+}
 .featured button:hover{
   background-color: var(--primary);
   color: white;
@@ -162,21 +221,22 @@ color: var(--primary);
  
 }
 .book_img{
-   width: 100%;
-  height: 250px; /* set a consistent height */
+  width: 100%;
+  height: 15rem; /* set a consistent height */
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden; 
 
-} 
-.book_img img {
+  img {
   margin-bottom: 10px;
   max-width: 80%;
   max-height: 80%;
   object-fit: cover;
 
 }
+} 
+
 
 .card_auther {
   color: #9c9c9c;
@@ -203,14 +263,16 @@ color: var(--primary);
 
 }
 
+/*arrivals*/
 .arrivals{
   margin-top: 5rem;
   text-align: center;
-}
 
-.arrivals h2{
+
+  h2{
   font-size: 30px;
   margin-bottom: 30px;
+}
 }
 
 .arrivals_container{
@@ -225,6 +287,20 @@ color: var(--primary);
   border: 1px solid #9c9c9c;
   padding: 10px;
   text-align: center;
+
+  h3{
+ font-family: 'Times New Roman', Times, serif;
+ margin: 1%;
+}
+
+ button{
+  margin: 2%;
+  padding: 8px 12px;
+  background: white;
+  border: 1px solid var(--primary);
+
+  
+}
   
 }
 
@@ -235,9 +311,9 @@ color: var(--primary);
   align-items: center;
   justify-content: center;
   overflow: hidden; 
-}
 
-.arr_img img{
+
+  img{
   margin-bottom: 10px;
   max-width: 100%;
   max-height: 100%;
@@ -245,15 +321,14 @@ color: var(--primary);
   transition: transform 0.3s ease; /*to animate a change in a property rather than switching instantly*/
 
 }
+}
+
 
 .arr_img:hover img{
  transform: scale(1.1);
 }
 
-.arrivals_card h3{
- font-family: 'Times New Roman', Times, serif;
- margin: 1%;
-}
+
 
 
 .stars{
@@ -261,14 +336,7 @@ color: var(--primary);
   margin: 1%;
 }
 
-.arrivals_card button{
-  margin: 2%;
-  padding: 8px 12px;
-  background: white;
-  border: 1px solid var(--primary);
 
-  
-}
 .arrivals_card:hover{
    box-shadow: 0 4px 12px var(--primary);
 
@@ -279,132 +347,92 @@ color: var(--primary);
   color: white;
 }
 
-.services{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 3rem 2rem;
-  gap: 1rem;
-}
-
-.services_cards{
-box-shadow: 0 2px 10px var(--primary);
-text-align: center;
-padding: 1rem 1rem;
-}
-
-.services_cards i{
-  margin-bottom: 1rem;
-  font-size: 3rem;
-  color: var(--primary);
-}
-
-.services_cards h3{
-  margin-bottom: 0.5rem;
-}
-
-.services_cards:hover{
-background-color: var(--primary);
-color: var(--light);
-}
-
-.services_cards:hover i{
-color: var(--light);
-}
-
-.About{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-
-}
-.About_img img{
-width: 100%;
-max-width: 650px;
-}
-.About_content p{
-  max-width: 500px;
-  margin-bottom: 4rem;
-  margin-top: 2rem;
-  font-size: smaller;
-}
-.Reviews{
+/*reviews section*/
+.reviews{
   margin-top: 7rem;
 }
-.Reviews_container{
+.reviews_container{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   gap: 2rem;
   margin: 5rem 2rem;
+  flex-wrap: wrap;/**/
 
-}
-.Reviews-card{
-  max-width: 350px;
-  padding: 1rem 1rem 3rem;
-  box-shadow: 0 4px 12px var(--primary);
-  background-color: var(--light);
-  color: var(--text);
-}
-.profile i{
-  top: 15px;
-  right: 20px;
-  font-size: 5rem;
-  color: rgba(0,0,0,0.1);
-}
-.Reviews-card:hover{
-  background-color: var(--primary);
-  color: var(--light);
-}
-.Reviews-card:hover i{
-  color: var(--light);
-}
-.profile{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.profile img{
-  max-width: 80px;
-  max-height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-.Reviews_container h3{
+  h3{
   margin: 0;
   font-weight: bold;
   text-align: left;
   margin-bottom: 1rem;
 }
-.Reviews-card p{
+
+}
+.reviews-card{
+  max-width: 350px;
+  padding: 1rem 1rem 3rem;
+  box-shadow: 0 4px 12px var(--primary);
+  background-color: var(--light);
+  color: var(--text);
+
+  p{
   font-size: x-small;
   text-align: left;
   font-weight: bold;
 }
 
+&:hover{
+  background-color: var(--primary);
+  color: var(--light);
+
+  i{
+  color: var(--light);
+}
+
+}
+}
+.profile{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  i{
+  top: 15px;
+  right: 20px;
+  font-size: 5rem;
+  color: rgba(0,0,0,0.1);
+}
+
+img{
+  max-width: 80px;
+  max-height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+}
+
+
+/*banner section*/
 .banner{
   position: relative;
   width: 100%;
   max-width: 100%;
-}
 
-.banner img{
+
+  img{
   width: 100%;
   height: auto;
-  
+
 }
 
-.banner .btn{
+.btn{
   position: absolute;
   bottom: 4rem;
   left: 5rem;
 
 }
+}
 
-
-
+/*blog section*/
 .blog h2{
   font-size: 30px;
   margin-top: 30px;
@@ -428,35 +456,44 @@ gap: 20px;
   flex-direction: column;
   gap: 10px;
 
-}
-
-.blog_img{
-  width: 100%;
-  height: 300px;
-  
-  
- 
-}
-.blog_img img{
-width: 100%;
-height: 100%;
-object-fit: cover;
-}
-
-
-
-.blog_card h3{
+  h3{
   size: 2rem;
   margin-left: 2%;
   color: var(--primary);
   
 }
 
-.blog_card p{
+p{
   size: 4rem;
   margin: 2%;
   color: var(--text);
 }
+
+
+&:hover {
+  background-color: var(--primary);
+  box-shadow: 0 4px 12px var(--primary);
+  color: white;
+}
+
+&:hover * {
+  color: white ; 
+}
+
+}
+
+.blog_img{
+  width: 100%;
+  height: 300px;
+  
+  img{
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+ 
+}
+
 
 .blog_icons{
   color: var(--primary);
@@ -465,27 +502,23 @@ object-fit: cover;
   justify-content: space-between;
 }
 
-.blog_card:hover {
-  background-color: var(--primary);
-  box-shadow: 0 4px 12px var(--primary);
-  color: white;
-}
 
-.blog_card:hover * {
-  color: white ; 
-}
 
+
+/*footer section*/
 footer{
   margin-top: 2rem;
   background-color: #f0f0f0;;
   color: var(--text);
   padding: 50px;
-}
-footer h3{
+
+  h3{
   margin: 10px;
   size: 30px;
   color: black;
 }
+}
+
 
 .footer_content{
   display: flex;
@@ -497,10 +530,12 @@ footer h3{
 .footer_about{
   width: 20%;
   text-size-adjust: 0.5rem;
+
+
+  p{
+  text-align: justify;
 }
 
-.footer_about p{
-  text-align: justify;
 }
 
 .footer_logo img{
@@ -513,8 +548,8 @@ footer h3{
 }
 
 
-
-.footer_links ul{
+.footer_links{
+  ul{
   list-style: none;
   justify-content: space-between;
   display: flex;
@@ -523,20 +558,21 @@ footer h3{
 
 }
 
-
-
-.footer_links a{
+a{
   text-decoration: none;
   color: var(--text);
   size: 0.5rem;
 }
 
-.footer_links a:hover{
+a:hover{
   color: var(--primary);
 }
 
+}
+
+
 .footer_contact{
-  
+
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -548,18 +584,21 @@ footer h3{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  
-}
-.social_links i{
+
+  i{
   color: black;
 }
+
+  
+}
+
 
 .social_links i:hover{
   color: var(--primary);
 }
 
-
-.footer_news input{
+.footer_news{
+  input{
   border-radius: 10px;
   padding: 5px;
   border: 1px solid #ccc;
@@ -567,7 +606,7 @@ footer h3{
   margin: 5px;
 }
 
-.footer_news button{
+button{
   border-radius: 15px;
   padding: 6px;
   border: 1px solid;
@@ -575,10 +614,224 @@ footer h3{
   color: white;
   size: 0.5rem;
 
-}
-
-.footer_news button:hover{
+  &:hover{
   background-color: white;
   color: var(--primary);
 }
+
+}
+}
+
+/*updating for responsive with iphon IPad*/
+@media (max-width: 1024px) {
+/* Welcome Section */
+  .welcome {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    text-align: left;
+    margin-top: 6rem;
+    width: 100%;
+    
+  }
+  .welcome_content{
+    align-self: self-start;
+    font-size: 2rem; 
+    padding: 3rem;
+    width: 100%;
+    h1{
+      font-size: 4rem;
+    }
+    p{
+      color: var(--text);
+      text-align: justify;
+      width: 100%;
+      
+        }   
+    }
+
+.welcome_books{
+  align-self: center;
+}
+
+/*featured section*/
+.book_card{
+min-width: 23%;
+}
+
+/* arrivales Section */
+  .arrivals_card{
+   margin: 1.5rem;
+   width: 23%;
+  }
+
+/* reviwes Section */
+.reviews_container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.reviews-card{
+  margin: 1rem;
+} 
+
+/* blog Section */
+.blog_card{
+  width:40%;
+  margin: 1rem;
+}
+
+}
+
+/*updating for responsive with iphon XR*/
+@media (max-width: 414px) {
+
+  body {
+    font-size: 14px; /* تصغير النصوص شوي */
+  }
+
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    min-width: 100%;
+  }
+
+  .logo img {
+    max-width: 60px;
+    height: auto;
+  }
+
+  /* اخفاء الناف بار وعرض موبايل منيو */
+  .navbar, .hover {
+    display: none;
+  }
+  
+  .mobile {
+    display: flex;            /* يبين المنيو تبعت الموبايل */
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .mobile .mobile_icons {
+    display: flex;
+    gap: 0.8rem;
+    font-size: 1.2rem;        /* يكبر الأيقونات شوي */
+  }
+ 
+
+  /* Welcome Section */
+  .welcome {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: 2rem
+  }
+
+  .welcome_content {
+    max-width: 100%;
+    h1{
+      margin-top: 3rem;
+      font-size: 3rem;
+    }
+    p{
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+
+  .welcome_books img {
+    max-width: 100%;
+  }
+
+  /* Services */
+  .services {
+    flex-direction: column;
+    margin: 1rem;
+  }
+
+  .services_cards {
+    width: 100%;
+  }
+
+  /* About */
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about_content p {
+    margin-bottom: 2rem;
+  }
+
+  /* Featured Section */
+  .featured{
+    margin-top: 3rem;
+  }
+  .featured_container {
+    gap: 10px;
+  }
+
+  .book_card {
+    min-width: 60%; /* يصير كارد واحد بالعرض */
+
+  }
+
+  /* Arrivals */
+  .arrivals_card {
+    min-width: 60%;
+  }
+
+  /* Reviews */
+  .reviews_container {
+    flex-direction: column;
+    margin: 2rem 1rem;
+  }
+
+  .reviews-card {
+    max-width: 100%;
+  }
+  /*banner section*/
+  .banner 
+  {
+    position: relative;
+      .btn{
+    position: absolute;
+    bottom: 0.5rem;
+    left: 15%;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+  }
+  
+
+
+  /* Blog */
+  .blog_card {
+    width: 100%;
+  }
+
+  /* Footer */
+  footer{
+    text-align: left;
+  }
+  .footer_content {
+    flex-direction: row;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+
+  .footer_about,
+  .footer_links,
+  .footer_contact,
+  .footer_news {
+    width: 50%;
+    margin-bottom: 1rem;
+    
+  }
+}
+
+
+
+
+
 
