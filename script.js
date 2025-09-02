@@ -107,3 +107,41 @@ function removeHighlights() {
     }
   });
 
+
+  //to remove duplicates from featured books html code
+  const container = document.getElementById("featured_container");
+  const cardTemplete = document.getElementById("book_templete");
+
+  for(let i=2; i<=15; i++){
+
+    const card= cardTemplete.cloneNode(true);  // makes a copy of the card
+    card.id = ""; // remove duplicate ID(not allowed)
+
+    const img= card.querySelector("img"); //gets the img element to modify it 
+    img.src= `images/book_${i}.jpg`;
+    img.alt= `Book ${i}`;
+
+    //the only updated thing in our case is the image 
+
+    container.appendChild(card);
+
+  }
+
+  //to remove duplicates from arrivals html code
+  const arrContainer= document.getElementById("arrivals_container");
+  const arrTemplete= document.getElementById("arrivals_templete");
+
+  for(let i=2; i<=10; i++){
+    const arrCard= arrTemplete.cloneNode(true);
+    arrCard.id="";
+
+    const arrImg= arrTemplete.querySelector("img");
+    arrImg.src=`images/arrival_${i}.jpg`;
+    arrImg.alt=`book${i}`;
+
+    arrContainer.appendChild(arrCard);
+  }
+
+
+
+
