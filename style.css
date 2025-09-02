@@ -75,9 +75,23 @@ body{
 .navbar a:hover::after {
   transform: scaleX(1);              /* يظهر الخط بالحركة */
 }
+.hover{
+  display: flex;
+}
 
 .hover :hover{
 color: var(--primary);
+}
+
+.search_bar{
+  display: none;
+  border: 1px solid var(--primary);
+}
+
+.highlight {
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
 }
 
 
