@@ -336,6 +336,10 @@ button {
 /*reviews section*/
 .reviews {
   margin-top: 7rem;
+  h2{
+    text-align: center;
+    font-weight: bold;
+  }
   .reviews_container {
     display: flex;
     justify-content: space-evenly;
