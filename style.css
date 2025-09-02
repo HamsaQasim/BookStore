@@ -4,6 +4,7 @@
     --dark: #000;
     --light: #fff;
     --text: #333;
+    --footer-bg: #f0f0f0;
 }
 
 *{
@@ -21,6 +22,7 @@ body{
 .mobile{
   display: none;
 }
+
 .header{
     position: fixed;
     top: 0;
@@ -80,6 +82,26 @@ body{
 color: var(--primary);
 }
 
+body.dark-mode {
+    background-color: #121212; /* لون الخلفية الداكن */
+    color: #ffffff;
+    --footer-bg: #1f1f1f;            /* لون النصوص */
+    
+}
+
+.header.dark-mode {
+    background-color:#121212;
+    box-shadow: 0 2px 8px #333;
+    a{
+      color: var(--light);
+    }
+}
+
+
+
+
+
+
 
 /* home section */
 .welcome {
@@ -89,11 +111,8 @@ color: var(--primary);
   align-items: center;
   justify-content: space-between;
   padding: 5rem 2rem;
-  background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url(images/book1.png); /* خلفية شفافة */
-  background-size: cover;
-  background-position: center;
-  background-size: cover; /**/
-
+  background-image: url('images/bg.png'); /* رابط الصورة */
+  background-position: center; 
 }
 
 .welcome_content {
@@ -508,7 +527,7 @@ object-fit: cover;
 /*footer section*/
 footer{
   margin-top: 2rem;
-  background-color: #f0f0f0;;
+  background-color:var(--footer-bg);
   color: var(--text);
   padding: 50px;
 
@@ -516,6 +535,12 @@ footer{
   margin: 10px;
   size: 30px;
   color: black;
+}
+a{
+  color: var(--text);
+  &:hover{
+    color: var(--primary);
+  }
 }
 }
 
@@ -611,7 +636,7 @@ button{
   padding: 6px;
   border: 1px solid;
   background-color: var(--primary);
-  color: white;
+  color: var(--light);
   size: 0.5rem;
 
   &:hover{
@@ -621,6 +646,52 @@ button{
 
 }
 }
+
+/* --- Mobile Menu CSS --- */
+.mobile_menu {
+  display: none;
+  position: fixed;        /* تثبيت القائمة فوق الشاشة */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;          /* تاخد كل ارتفاع الشاشة */
+  background: rgba(1, 1, 1, 0.9); /* خلفية فاتحة شبه شفافة */
+  text-align: center;
+  padding-top: 100px;     /* مسافة من فوق */
+  z-index: 1;
+}
+
+.mobile_menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+/* عند تفعيلها */
+.active {
+  display: block;
+}
+
+.mobile_menu a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 100;
+    font-size: 2rem;
+}
+
+.mobile_menu a:hover {
+    color: var(--primary);
+}
+#closeMenu {
+  display: block;
+  font-size: 3rem;
+  cursor: pointer;
+  color: var(--primary);
+  margin: 20px auto;   /* يخليها بالوسط مع مسافة فوق */
+  text-align: center;  /* يضمن أنها بالوسط */
+}
+
+
 
 /*updating for responsive with iphon IPad*/
 @media (max-width: 1024px) {
