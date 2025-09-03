@@ -142,6 +142,35 @@ function removeHighlights() {
     arrContainer.appendChild(arrCard);
   }
 
+  //remove duplicates from reviews 
+  const revContainer=document.getElementById("reviews_container");
+  const revTemplete=document.getElementById("review_templete");
+  for(i=2; i<=4; i++){
+    const revCard=revTemplete.cloneNode(true);
+    revCard.id="";
+
+    const revImg=revTemplete.querySelector("img");
+    revImg.src=`images/review_${i}.png`;
+    revImg.alt=`review${i}`;
+
+    revContainer.appendChild(revCard);
+  }
+
+  //remove duplicates from blogers
+  const blogContainer=document.getElementById("blog_container");
+  const blogTemplete=document.getElementById("blog_templete");
+  for(i=2; i<=3; i++){
+    const blogCard=blogTemplete.cloneNode(true);
+    blogCard.id="";
+
+    const blogImg=blogTemplete.querySelector("img");
+    blogImg.src=`images/blog_${i}.jpg`;
+    blogImg.alt=`bloggers${i}`;
+
+    blogContainer.appendChild(blogCard);
+  }
+
+
 
 
 
